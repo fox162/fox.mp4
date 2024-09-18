@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="src/css/popup.css">
+<script src="src/js/lib/Sortable.min.js"></script>
+<script src="src/js/lib/fox.api.js"></script>
+<script src="src/js/popup.js"></script>
+
+<div class="popup">
+    <div class="head">
+        <h1>
+            <img src="assets/svg/fox.icon.svg" alt="logo" class="svg">
+            fox.mp4
+        </h1>
+        <button>
+            <img src="assets/svg/queue.svg" alt="queue icon" class="svg">
+            Show Queue
+        </button>
+    </div>
+    <div class="center">
+        <div class="download">
+            <input type="text" class="videoId" placeholder="Enter video ID">
+            <button class="fetchBtn">
+                <img src="assets/svg/search.svg" alt="fetch icon" class="svg">
+            </button>
+            <video src="assets/popup/sample.mp4" class="video" controls autoplay></video>
+            <div class="videoTitle">Bee cow rope</div>
+            <input type="text" class="fileName" placeholder="File name">
+            <input type="text" class="filePath" placeholder="File path">
+            <div class="actions">
+                <select name="quality" id="qualitySelect">
+                    <option value="h">highest</option>
+                    <option value="l">lowest</option>
+                </select>
+                <button class="downloadBtn">
+                    <img src="assets/svg/download.svg" alt="download icon" class="svg">
+                    Download
+                </button>
+                <button class="advanced">
+                    <img src="assets/svg/settings.svg" alt="advanced icon" class="svg">
+                    Advanced
+                </button>
+            </div>
+        </div>
+        <div class="queue-container"  style="display: none;">
+            <div class="queue">
+                <div class="node">
+                    <video src="assets/popup/sample.mp4" class="preview"></video>
+                    <div class="info">
+                        <div class="title">Bee cow rope</div>
+                        <div class="progress">
+                            <div class="bar"></div>
+                            <div class="percentage">0%</div>
+
+                        </div>
+                        <div class="actions">
+                            <button class="pause">
+                                <img src="assets/svg/pause.svg" alt="pause icon" class="svg">
+                            </button>
+                            <button class="cancel">
+                                <img src="assets/svg/cancel.svg" alt="cancel icon" class="svg">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="void"></div>
+            </div> 
+        </div>
+    </div>
+</div>

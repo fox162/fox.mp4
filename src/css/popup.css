@@ -1,0 +1,371 @@
+/* import font */
+@font-face {
+    font-family: 'yt-sans';
+    src: url('../../assets/font/youtubeSans.woff2');
+}
+
+:root {
+    --red: #ff0000;
+    --pseudoWhite: #f9f9f9;
+    --white: #fff;
+    --lightGray: #f1f1f1;
+    --text: #333;
+    --bg: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'yt-sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 12px;
+}
+
+.svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.popup {
+    width: 400px;
+    height: 510px;
+    max-height: 700px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 5em;
+}
+
+.head * {
+    display: flex;
+    align-items: center;
+}
+
+.head h1 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--text);
+    margin-right: 1em;
+    cursor: pointer;
+    height: 100%;
+    transition: color 0.3s;
+    user-select: none;
+}
+
+.head h1:hover {
+    color: var(--red);
+}
+
+.head button {
+    background-color: var(--white);
+    border: var(--lightGray) 1px solid;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.head button:hover {
+    background-color: var(--lightGray);
+    color: var(--red);
+}
+
+.center {
+    padding: 1em;
+}
+
+.download {
+    display: flex;
+    flex-direction: column;
+}
+
+.download > * { 
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.download video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+}
+
+.download .videoTitle {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.center input,
+.center select {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
+    border: var(--lightGray) 1px solid;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.center input:focus,
+.center select:focus {
+    border-color: var(--red);
+}
+
+.center select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    background-size: 0.65em auto;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.actions select {
+    flex: 1;
+}
+
+.action select option {
+    margin: 1em;
+}
+
+.center button {
+    background-color: var(--white);
+    border: var(--lightGray) 1px solid;
+    border-radius: 5px;
+    padding: 0.8em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.center button:hover {
+    background-color: var(--red);
+    color: var(--white);
+    border-color: var(--red);
+}
+
+.center button img {
+    margin-right: 0.5em;
+}
+
+/* New styles for the fetch button */
+.download {
+    position: relative;
+}
+
+.fetchBtn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    padding: 0.5em;
+    background-color: var(--white);
+    border: var(--lightGray) 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fetchBtn:hover {
+    background-color: var(--red);
+    color: var(--white);
+    border-color: var(--red);
+}
+
+.fetchBtn .svg {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* Adjust the input field to accommodate the fetch button */
+.download .videoId {
+    padding-right: 3em;
+}
+
+/* Rest of the CSS remains the same */
+/* ... */
+
+
+/* Previous CSS remains the same up to the .queue selector */
+
+.queue-container {
+    position: relative;
+}
+
+.queue-container::before,
+.queue-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.queue-container::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.queue-container::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.queue {
+    max-height: 425px; /* Adjust this value as needed */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) var(--lightGray);
+    padding: 10px 0;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Webkit browsers custom scrollbar */
+.queue::-webkit-scrollbar {
+    width: 8px;
+}
+
+.queue::-webkit-scrollbar-track {
+    background: var(--lightGray);
+    border-radius: 4px;
+}
+
+.queue::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+    border-radius: 4px;
+    border: 2px solid var(--lightGray);
+}
+
+.queue .node {
+    display: flex;
+    align-items: center;
+    background-color: var(--pseudoWhite);
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    cursor: move;
+    transition: background-color 0.3s;
+}
+
+.queue .node:hover {
+    background-color: var(--lightGray);
+}
+
+.queue .preview {
+    width: 100px;
+    height: 56.25px; /* 16:9 aspect ratio */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 1em;
+    flex-shrink: 0;
+}
+
+.queue .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Allows text to be truncated */
+}
+
+.queue .title {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.queue .progress {
+    height: 4px;
+    background-color: var(--lightGray);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+}
+
+.queue .bar {
+    height: 100%;
+    background-color: var(--red);
+    width: 0;
+    transition: width 0.3s;
+}
+
+.queue .percentage {
+    font-size: 0.9em;
+    color: var(--text);
+    margin-bottom: 0.5em;
+}
+
+.queue .actions {
+    display: flex;
+    gap: 0.5em;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.queue .actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.3em;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.queue .actions button:hover {
+    background-color: var(--lightGray);
+}
+
+.queue .actions .svg {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* Sortable styles */
+.sortable-ghost {
+    opacity: 0.5;
+}
+
+.sortable-chosen {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

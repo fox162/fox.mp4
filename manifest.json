@@ -1,0 +1,41 @@
+{
+    "name": "test",
+    "version": "0.4",
+    "description": "idk",
+    "manifest_version": 2,
+    
+    "icons": {
+        "16": "assets/svg/fox.icon.svg",
+        "48": "assets/svg/fox.icon.svg",
+        "128": "assets/svg/fox.icon.svg"
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "assets/svg/fox.icon.svg"
+    },
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "test@example.com"
+        }
+    },
+
+    "background": {
+        "scripts": [
+            "./src/js/lib/fox.api.js",
+            "./src/js/background.js"
+        ],
+        "persistent": false
+    },
+
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs",
+        "webNavigation",
+        "webRequest",
+        "webRequestBlocking",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
